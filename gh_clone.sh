@@ -1,20 +1,17 @@
-ORG=COSC2325-001-SU17
+#~/bin/env bash
+ORG=https://github.com/ACC-COSC2325-001-SU17
 
 declare -a labs=("homework"
                  "lab1-memory-unit"
+                 "lab2-alu-unit"
                 )
 
-
-for l in "${labs[@]}"
-do
-    echo "$l"
-done
-
-
 while read -r  f l u; do
-    mkdir -p "$f-$l"
-    for a in "${labs[@]}"; do
-        echo "$a-$u"
-    done
+    if [[ $f = *[!\ ]* ]]; then
+        mkdir -p "$f-$l"
+            for a in "${labs[@]}"; do
+                git clone "$ORG/$a-$u" "$f-$l/$a-$u"
+            done
+    fi
 done < repo_names.txt
 
