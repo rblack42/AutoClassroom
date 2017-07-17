@@ -1,0 +1,6 @@
+If you tell me what each line does, that is C level. If you explain the function parameters, hat is A level.
+
+This just details what each instruction does, it does not explain how that parameter was found. 
+
+Kenston Brown: 35 1
+
